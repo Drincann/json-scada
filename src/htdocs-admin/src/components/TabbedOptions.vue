@@ -10,33 +10,38 @@
       <v-tabs-slider class="d-print-none"></v-tabs-slider>
 
       <v-tab href="#tab-1" class="d-print-none">
-        {{ $t('src\\components\\users.users') }}
+        {{ $t("src\\components\\users.users") }}
         <v-icon>mdi-account-multiple</v-icon>
       </v-tab>
 
       <v-tab href="#tab-2" class="d-print-none">
-        {{ $t('src\\components\\roles.roles') }}
+        {{ $t("src\\components\\roles.roles") }}
         <v-icon>mdi-security</v-icon>
       </v-tab>
 
       <v-tab href="#tab-3" class="d-print-none">
-        {{ $t('src\\components\\driverInstances.driverInstances') }}
+        {{ $t("src\\components\\driverInstances.driverInstances") }}
         <v-icon>mdi-cogs</v-icon>
       </v-tab>
 
       <v-tab href="#tab-4" class="d-print-none">
-        {{ $t('src\\components\\connections.connections') }}
+        {{ $t("src\\components\\connections.connections") }}
         <v-icon>mdi-file-tree</v-icon>
       </v-tab>
 
       <v-tab href="#tab-5" class="d-print-none">
-        {{ $t('src\\components\\tags.tags') }}
+        {{ $t("src\\components\\tags.tags") }}
         <v-icon>mdi-tag-multiple</v-icon>
       </v-tab>
 
       <v-tab href="#tab-6" class="d-print-none">
-        {{ $t('src\\components\\useractions.userActions') }}
+        {{ $t("src\\components\\useractions.userActions") }}
         <v-icon>mdi-clipboard-account</v-icon>
+      </v-tab>
+
+      <v-tab href="#tab-7" class="d-print-none">
+        editor
+        <v-icon>mdi-wrench</v-icon>
       </v-tab>
 
       <v-tab-item :value="'tab-' + 1">
@@ -63,6 +68,9 @@
         <UserActions />
       </v-tab-item>
 
+      <v-tab-item :value="'tab-' + 7">
+        <FUXA />
+      </v-tab-item>
     </v-tabs>
 
     <!--
@@ -89,14 +97,14 @@ import ProtocolDriverInstances from "@/components/ProtocolDriverInstances";
 import ProtocolConnections from "@/components/ProtocolConnections";
 import Tags from "@/components/Tags";
 import UserActions from "@/components/UserActions";
+import FUXA from "@/components/FUXA";
 
 export default {
   name: "TabbedOptions",
   data() {
     return {
       tab: null,
-      text:
-        "",
+      text: "",
     };
   },
   components: {
@@ -105,7 +113,8 @@ export default {
     ProtocolDriverInstances,
     ProtocolConnections,
     Tags,
-    UserActions
+    UserActions,
+    FUXA,
   },
 };
 </script>
