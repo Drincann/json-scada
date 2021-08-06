@@ -23,7 +23,7 @@ dotnet publish --runtime win-x64 -p:PublishReadyToRun=true -c Release -o ..\..\.
 cd \json-scada\src\lib60870.netcore\iec104server\ 
 dotnet publish --runtime win-x64 -p:PublishReadyToRun=true -c Release -o ..\..\..\bin\
 cd \json-scada\src\dnp3\Dnp3Client\ 
-dotnet publish --runtime win-x64 -p:PublishReadyToRun=true -c Release -o ..\..\..\bin\ Dnp3Client.csproj
+dotnet publish --runtime win-x64 -p:PublishReadyToRun=true -c Release -o ..\..\..\bin\
 cd \json-scada\src\OPC-UA-Client\ 
 dotnet publish --runtime win-x64 -p:PublishReadyToRun=true -c Release -o ..\..\bin\
 cd \json-scada\src\libplctag\libplctag.NET\src\libplctag
@@ -44,34 +44,48 @@ go build
 copy /Y i104m ..\..\bin\
 
 cd \json-scada\src\cs_data_processor
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\cs_custom_processor
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\oshmi2json
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\oshmi_sync
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\alarm_beep
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\server_realtime
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\server_realtime_auth
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\shell-api
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\htdocs-admin
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 call \json-scada\platform-windows\nodejs-runtime\npm run build
 cd \json-scada\src\grafana_alert2event
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\telegraf-listener
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\mqtt-sparkplug
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\config_server_for_excel
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 cd \json-scada\src\OPC-UA-Server
-call \json-scada\platform-windows\nodejs-runtime\npm install
+call \json-scada\platform-windows\nodejs-runtime\npm i --package-lock-only
+call \json-scada\platform-windows\nodejs-runtime\npm update
 
 cd ..\..\platform-windows
 

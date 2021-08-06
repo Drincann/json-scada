@@ -14,6 +14,13 @@ const UserActionsQueue = require('../../userActionsQueue')
 var jwt = require('jsonwebtoken')
 var bcrypt = require('bcryptjs')
 
+// add header to identify json-scada user for Grafana auto-login (auth.proxy)
+exports.addXWebAuthUser = (req) => {
+  let ck = checkToken(req)
+  if (ck !== false)
+    req.headers['X-WEBAUTH-USER'] = ck?.username
+}
+
 exports.listUserActions = async (req, res) => {
   console.log('listUserActions')
 

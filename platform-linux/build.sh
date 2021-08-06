@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ARG1=${1:-osx-x64}
+ARG1=${1:-linux-x64}
 
 cd ..
 mkdir bin
@@ -12,7 +12,7 @@ cd ../OPC-UA-Client
 dotnet publish --runtime $ARG1 -p:PublishReadyToRun=true -c Release -o ../../bin/
 
 cd ../dnp3/Dnp3Client
-dotnet publish --runtime $ARG1 -p:PublishReadyToRun=true -c Release -o ../../../bin/
+dotnet publish --runtime $ARG1 -p:PublishReadyToRun=true -c Release -o ../../../bin/ Dnp3Client.csproj
 
 export GOBIN=~/json-scada/bin
 go env -w GO111MODULE=auto

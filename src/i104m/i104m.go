@@ -40,7 +40,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var softwareVersion string = "{json:scada} I104M Protocol Driver v.0.1.1 - Copyright 2020 Ricardo L. Olsen"
+var softwareVersion string = "{json:scada} I104M Protocol Driver v.0.1.2 - Copyright 2020-2021 Ricardo L. Olsen"
 var driverName string = "I104M"
 var isActive bool = false
 
@@ -278,7 +278,12 @@ func iterateChangeStream(routineCtx context.Context, waitGroup *sync.WaitGroup, 
 
 			errMsg := ""
 			ok := false
-			for _, ipAddressDest := range protCon.IPAddresses {
+			for i, ipAddressDest := range protCon.IPAddresses {
+
+				if i >= 2 { // only send to the first 2 addresses
+					break
+				}
+
 				if strings.TrimSpace(ipAddressDest) == "" {
 					errMsg = "no IP destination"
 					continue
@@ -756,7 +761,8 @@ func main() {
 	var waitGroup sync.WaitGroup
 	if protocolConn.CommandsEnabled == true {
 		waitGroup.Add(1)
-		routineCtx, _ := context.WithCancel(context.Background())
+		routineCtx, cancel := context.WithCancel(context.Background())
+		defer cancel()
 		go iterateChangeStream(routineCtx, &waitGroup, csCommands, &protocolConn, ServerConn, collectionCommands)
 	}
 

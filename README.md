@@ -47,7 +47,7 @@ To provide an easy to use, fully-featured, scalable, and portable SCADA/IIoT-I4.
 * MongoDB as the real-time core database, persistence layer, config store, SOE historian.
 * Event-based realtime async data processing with MongoDB Change Streams.
 * Portability and modular interoperability over Linux, Windows, Mac OSX, x86/64, ARM.
-* Windows installer available in the [releases section](https://github.com/riclolsen/json-scada/releases/tag/V0.12-alpha).
+* Windows installer available in the [releases section](https://github.com/riclolsen/json-scada/releases/tag/V0.13-alpha).
 * Unlimited tags, servers, and users.
 * Horizontal scalability, from a single computer to big clusters (MongoDB-sharding), Docker containers, VMs, Kubernetes, cloud, or hybrid deployments.
 * Modular distributed architecture. Lightweight redundant data acquisition nodes can connect securely over TLS to the database server. E.g. a Raspberry PI can be a data acquisition node.
@@ -77,12 +77,12 @@ To provide an easy to use, fully-featured, scalable, and portable SCADA/IIoT-I4.
 
 ## Architecture
 
-![architecture](https://github.com/riclolsen/json-scada/raw/master/docs/JSON-SCADA_ARCHITECTURE.png "{json:scada} Architecture")
+![architecture](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/riclolsen/json-scada/master/docs/JSON-SCADA_Arquitecture.txt "{json:scada} Architecture")
 
 ## Documentation
 
 * [Install Guide](https://github.com/riclolsen/json-scada/blob/master/docs/install.md)
-* [Windows installer](https://github.com/riclolsen/json-scada/releases/tag/V0.12-alpha)
+* [Windows installer](https://github.com/riclolsen/json-scada/releases/tag/V0.13-alpha)
 * [Docker Demo](https://github.com/riclolsen/json-scada/blob/master/demo-docker/README.md)
 * [Schema Documentation](https://github.com/riclolsen/json-scada/blob/master/docs/schema.md)
 * [Config File](https://github.com/riclolsen/json-scada/blob/master/conf/README.md)
@@ -114,7 +114,7 @@ To provide an easy to use, fully-featured, scalable, and portable SCADA/IIoT-I4.
 - [x] IEC 60870-5-101 Server (Serial, TCP)
 - [x] IEC 60870-5-101 Client (Serial, TCP)
 - [ ] IEC 60870-5-103 Client
-- [x] DNP3 Client (TCP, UDP, TLS, Serial)
+- [x] DNP3 Client (TCP, UDP, TLS, Serial) - Windows x64 only!
 - [ ] DNP3 Server (TCP, UDP, TLS, Serial)
 - [x] MQTT/Sparkplug-B Client
 - [x] I104M (adapter for some OSHMI drivers)
