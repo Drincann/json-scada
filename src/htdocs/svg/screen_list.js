@@ -7,5 +7,6 @@ optionhtml = `
 <optgroup label = 'Substation 1' >
   <option value='../svg/kor1.svg' > 变电站演示</option>
   <option value='../svg/SLDdemo.svg' selected > 阶段二演示</option>
-</optgroup >
+  <option value='../svg/stage3.svg'  selected> 阶段三演示</option>
+  </optgroup >
 `
