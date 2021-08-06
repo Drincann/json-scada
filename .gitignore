@@ -71,5 +71,6 @@ publish/
 
 *.log
 
-
+# mac 自动生成的文件
+.DS_Store
 
