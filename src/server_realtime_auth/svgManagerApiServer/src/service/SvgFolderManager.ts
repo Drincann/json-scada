@@ -4,6 +4,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import resolvePath from 'resolve-path'
 import hash from 'hash.js'
+import { generateSvgScreenListCode } from './SvgScreenListCodeGenerator'
 
 export interface SvgInfo {
   filename: string;
@@ -72,6 +73,10 @@ export class SvgFolderManager {
     if (updater?.fileContent) {
       await fs.writeFile(newFilePath ?? filePath, updater.fileContent)
     }
+  }
+
+  private async updateSvgScreenList() {
+    await fs.writeFile(path.resolve(this.svgFolder, 'screen_list.js'), generateSvgScreenListCode(this.getSvgList()))
   }
 
   private resolveSvgFilename(filename: string): string {
@@ -165,5 +170,6 @@ export class SvgFolderManager {
       })
     )
     this.svgList = this.generateSvgList()
+    this.updateSvgScreenList()
   }
 }
