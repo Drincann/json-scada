@@ -51,6 +51,10 @@ const dbAuth = require('./app/models')
 const { authJwt } = require('./app/middlewares')
 const { AsyncLocalStorage } = require('async_hooks')
 const { canSendCommands } = require('./app/middlewares/authJwt.js')
+const { config: { address } } = require('./svgManagerApiServer/dist/index')
+
+// Svg manager api reverse proxy
+app.use('/svgManagerApi', httpProxy(address))
 
 // Argument NOAUTH disables user authentication
 var args = process.argv.slice(2)
