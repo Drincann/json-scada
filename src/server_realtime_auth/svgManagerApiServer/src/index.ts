@@ -30,7 +30,7 @@ server
      */
     router
       .get('/svg', getSvgList)
-      .put('/svg', bodyValidator('SSS', ['filename', 'updater.fileContent', 'updater.filename']), putSvg)
+      .put('/svg', bodyValidator('SSS|SZS|SSZ', ['filename', 'updater.fileContent', 'updater.filename']), putSvg)
       .delete('/svg', bodyValidator('S', ['filename']), deleteSvg)
       .post('/svg', bodyValidator('SS', ['filename', 'fileContent']), postSvg)
       .routes()
