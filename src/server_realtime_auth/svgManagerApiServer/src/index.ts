@@ -1,7 +1,7 @@
 import Koa from 'koa'
 import KoaRouter from 'koa-router'
 import koaBody from 'koa-body'
-import { bodyValidator, statusSetter, apiPacker } from './middleware'
+import { bodyValidator, statusSetter, apiPacker , allowCrossOrigin } from './middleware'
 import { deleteSvg, getSvgList, postSvg, putSvg } from './route'
 
 const server: Koa = new Koa()
@@ -13,6 +13,7 @@ export const config = {
 }
 
 server
+  .use(allowCrossOrigin)
   .use(statusSetter)
   .use(koaBody())
   .use(apiPacker)
