@@ -87,7 +87,7 @@
         if ('json-scada-user' in ck) {
           ck = JSON.parse(ck['json-scada-user'])
           var logoutButton = document.getElementById('logout')
-          var buttonMessage = 'Logout [' + ck.username + ']'
+          var buttonMessage = '登出 [' + ck.username + ']'
           if (logoutButton.textContent !== buttonMessage)
             logoutButton.textContent = buttonMessage
 
@@ -181,21 +181,21 @@
     <div id="divlogin" class="login" style="display:none">
       <h1>
         <img height="90" src="images/json-scada.svg" alt="{json:scada}" />
-        <br />Login
+        <br />登录
       </h1>
 
       <input
         type="text"
         name="username"
         id="username"
-        placeholder="Username"
+        placeholder="用户名"
         required="required"
       />
       <input
         type="password"
         name="password"
         id="password"
-        placeholder="Password"
+        placeholder="密码"
         required="required"
       />
       <button
@@ -204,7 +204,7 @@
         onclick="tryLogin()"
         class="btn btn-primary btn-block btn-large"
       >
-        LOGIN
+        登录
       </button>
 
       <div id="divloginerror" style="display:none">
@@ -214,7 +214,7 @@
 
     <div id="divlogout" style="display:none">
       <h1>
-        <img height="90" src="images/json-scada.svg" alt="{json:scada}" />
+        <img height="90" src="images/json-scada.svg" alt="{json:scadaa}" />
       </h1>
 
       <button
@@ -228,10 +228,10 @@
 
       <div class="blocks">
         <a target="_blank" href="../display.html?SVGFILE=../svg/stage3.svg">
-          <img height="40" src="images/tela.png" /><br />Display Viewer
+          <img height="40" src="images/tela.png" /><br />视图展示
         </a>
       </div>
-      <div class="blocks">
+      <!-- <div class="blocks">
         <a target="_blank" href="../tabular.html?MODE=ALARMS_VIEWER">
           <img height="40" src="images/firstaid.svg" /><br />Alarms Viewer
         </a>
@@ -262,7 +262,7 @@
         <a target="_blank" href="../about.html">
           <img height="40" src="images/json-scada.svg" /><br />About JSON SCADA
         </a>
-      </div>
+      </div> -->
 
       <div
         class="blocks"
@@ -271,7 +271,7 @@
         style="display:none"
       >
         <a target="_blank" href="../admin/">
-          <img height="40" src="images/admin.png" /><br />Admin
+          <img height="40" src="images/admin.png" /><br />管理
         </a>
       </div>
     </div>
