@@ -1,0 +1,21 @@
+{
+    "name": "mongo2influxDataSyncer",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "ts-node": "^10.2.1",
+        "typescript": "^4.4.2"
+    },
+    "dependencies": {
+        "@influxdata/influxdb-client": "^1.17.0",
+        "mongodb": "^4.1.1"
+    }
+}
