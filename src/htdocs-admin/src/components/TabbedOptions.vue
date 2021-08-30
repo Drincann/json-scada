@@ -44,6 +44,11 @@
         <v-icon>mdi-wrench</v-icon>
       </v-tab>
 
+      <v-tab href="#tab-8" class="d-print-none">
+        grafana
+        <v-icon>mdi-view-dashboard-variant</v-icon>
+      </v-tab>
+
       <v-tab-item :value="'tab-' + 1">
         <Users />
       </v-tab-item>
@@ -70,6 +75,10 @@
 
       <v-tab-item :value="'tab-' + 7">
         <FUXA />
+      </v-tab-item>
+
+      <v-tab-item :value="'tab-' + 8">
+        <Grafana />
       </v-tab-item>
     </v-tabs>
 
@@ -98,6 +107,7 @@ import ProtocolConnections from "@/components/ProtocolConnections";
 import Tags from "@/components/Tags";
 import UserActions from "@/components/UserActions";
 import FUXA from "@/components/FUXA";
+import Grafana from "@/components/Grafana";
 
 export default {
   name: "TabbedOptions",
@@ -115,6 +125,7 @@ export default {
     Tags,
     UserActions,
     FUXA,
+    Grafana,
   },
 };
 </script>
